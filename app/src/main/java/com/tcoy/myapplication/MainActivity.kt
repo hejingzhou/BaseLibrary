@@ -1,18 +1,20 @@
 package com.tcoy.myapplication
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log.i
+import androidx.core.content.ContextCompat
 import com.he.baselibrary.BaseLibraryManager
-import com.he.baselibrary.utils.L
+import com.he.baselibrary.base.RootActivity
 import com.he.baselibrary.view.TitleView
-import java.util.logging.Logger
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : RootActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        BaseLibraryManager.init(this,true)
-        findViewById<TitleView>(R.id.mTitleView).setTitle("哈哈哈").hintViewStatus()
+        BaseLibraryManager.init(this, true)
+        val titleView = findViewById<TitleView>(R.id.mTitleView)
+        titleView.fullScreen(this, false).setTitle("测试标题").getViewStatus().setColor(
+            ContextCompat.getColor(this, R.color.color_test)
+        )
+
     }
 }

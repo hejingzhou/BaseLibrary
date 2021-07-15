@@ -38,14 +38,6 @@ class ViewStatus(context: Context?, attrs: AttributeSet?) : RelativeLayout(conte
     }
 
     /**
-     * 设置背景颜色
-     */
-    fun setStatusBarColor(color: Int) {
-        mView?.setBackgroundColor(color)
-    }
-
-
-    /**
      * 获取状态栏高度
      */
     private fun getStatusBarHeight(context: Context?): Int {

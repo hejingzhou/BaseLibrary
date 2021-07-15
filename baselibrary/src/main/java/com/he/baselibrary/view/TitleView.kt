@@ -1,11 +1,14 @@
 package com.he.baselibrary.view
 
+import android.app.Activity
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
 import android.widget.RelativeLayout
+import androidx.fragment.app.Fragment
+import com.gyf.immersionbar.ImmersionBar
 import com.he.baselibrary.databinding.TitleLayoutBinding
 
 
@@ -44,6 +47,40 @@ class TitleView(context: Context, attributeSet: AttributeSet) :
         mImgIcon?.setOnClickListener {
             onTitleListener?.rightIconClick()
         }
+    }
+
+    /**
+     * 全屏
+     */
+    fun fullScreen(activity: Activity, isDarkFont: Boolean): TitleView {
+        ImmersionBar.with(activity).apply {
+            fullScreen(true)
+            statusBarDarkFont(isDarkFont)
+        }.init()
+        return this
+    }
+
+
+    /**
+     * 全屏
+     */
+    fun fullScreen(fragment: Fragment, isDarkFont: Boolean): TitleView {
+        ImmersionBar.with(fragment).apply {
+            fullScreen(true)
+            statusBarDarkFont(isDarkFont)
+        }.init()
+        return this
+    }
+
+    /**
+     * 全屏
+     */
+    fun fullScreen(fragment: android.app.Fragment, isDarkFont: Boolean): TitleView {
+        ImmersionBar.with(fragment).apply {
+            fullScreen(true)
+            statusBarDarkFont(isDarkFont)
+        }.init()
+        return this
     }
 
     fun getViewStatus(): ViewStatus {
