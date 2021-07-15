@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LineView">
+        <!--    key名字    -->
+        <attr name="key" format="string" />
+        <!--    value    -->
+        <attr name="value" format="string" />
+        <!--    keyTextSize    -->
+        <attr name="key_text_size" format="dimension" />
+        <!--    keyTextColor    -->
+        <attr name="key_color" format="color" />
+        <!--    ArrowImageColor    -->
+        <attr name="arrow_color" format="color" />
+        <!--    隐藏下横线 默认不隐藏    -->
+        <attr name="hidden_line" format="boolean" />/>
+    </declare-styleable>
+</resources>
